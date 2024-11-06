@@ -4,20 +4,38 @@ pipeline {
     stages {
         stage('Initialize') {
             steps {
-                echo 'Initializing pipeline...'
+                script {
+                    echo 'Initializing pipeline...'
+                }
             }
         }
         stage('Build') {
             steps {
-                echo 'Pretending to build...'
+                script {
+                    echo 'Pretending to build...'
+                }
             }
         }
         stage('Test') {
             steps {
-                echo 'Pretending to test...'
+                script {
+                    echo 'Pretending to test...'
+                }
             }
         }
         stage('Deploy') {
             steps {
-              
+                script {
+                    echo 'Pretending to deploy...'
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed successfully.'
+        }
+    }
+}
 
