@@ -10,10 +10,13 @@ pipeline {
             }
         }
         stage('Build') {
-            steps {
+            git 'https://github.com/yourusername/my-app.git'
+                
+                // Build the Maven project
                 script {
-                    echo 'Pretending to build...'
-                }
+                    withMaven(maven: 'Maven 3.8.1') {
+                        sh 'mvn clean package -Pproduction'
+                    }
             }
         }
         stage('Test') {
