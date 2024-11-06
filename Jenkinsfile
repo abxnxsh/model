@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                git 'https://github.com/yourusername/my-app.git'
+                git 'https://github.com/abxnxsh/model.git'
                 
                 // Build the Maven project
                 script {
