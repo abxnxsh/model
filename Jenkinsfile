@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        MAVEN_HOME = tool name: 'Maven 3.9.9', type: 'maven'
+        MAVEN_HOME = tool name: 'Maven 3.8.1', type: 'maven'
     }
     
     stages {
@@ -13,7 +13,7 @@ pipeline {
                 
                 // Build the Maven project
                 script {
-                    withMaven(maven: 'Maven 3.9.9') {
+                    withMaven(maven: 'Maven 3.8.1') {
                         sh 'mvn clean package -Pproduction'
                     }
                 }
